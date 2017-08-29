@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--
+本章将讲解 Bootstrap 支持的另一个特性，输入框组。输入框组扩展自 表单控件。使用输入框组，您可以很容易地向基于文本的输入框添加作为前缀和后缀的文本或按钮。
+通过向输入域添加前缀和后缀的内容，您可以向用户输入添加公共的元素。例如，您可以添加美元符号，或者在 Twitter 用户名前添加 @，或者应用程序接口所需要的其他公共的元素。
+向 .form-control 添加前缀或后缀元素的步骤如下：
+把前缀或后缀元素放在一个带有 class .input-group 的 <div> 中。
+    接着，在相同的 <div> 内，在 class 为 .input-group-addon 的 <span> 内放置额外的内容。
+把该 <span> 放置在 <input> 元素的前面或者后面。
+为了保持跨浏览器的兼容性，请避免使用 <select> 元素，因为它们在 WebKit 浏览器中不能完全渲染出效果。也不要直接向表单组应用输入框组的 class，输入框组是一个孤立的组件。
+-->
+<div style="padding:100px 100px 10px;">
+    <form class="bs-example bs-example-form">
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="twitterhandle">
+        </div>
+        <br>
+        <div class="input-group">
+                <input type="text" class="form-control">
+            <span class="input-group-addon">.00</span>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="text" class="form-control">
+            <span class="input-group-addon">.00</span>
+        </div>
+    </form>
+</div>
+<br>
+<!--输入框组的大小-->
+<div style="padding: 100px 100px 100px 10px;">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Twitterhandle">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Twitterhandle">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Twitterhandle">
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--超小屏幕
+手机 (<768px)
+小屏幕
+平板 (≥768px)
+中等屏幕
+桌面 (≥992px)
+大屏幕
+桌面 (≥1200px)
+.visible-xs-*	可见	隐藏	隐藏	隐藏
+.visible-sm-*	隐藏	可见	隐藏	隐藏
+.visible-md-*	隐藏	隐藏	可见	隐藏
+.visible-lg-*	隐藏	隐藏	隐藏	可见
+.hidden-xs	隐藏	可见	可见	可见
+.hidden-sm	可见	隐藏	可见	可见
+.hidden-md	可见	可见	隐藏	可见
+.hidden-lg	可见	可见	可见	隐藏-->
+<div class="container">
+    <div class="row visible-on">
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444">
+            <span class="hidden-xs">特别小型</span>
+            <span class="visible-xs">✔ 在特别小型设备上可见</span>
+        </div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
+            <span class="hidden-sm">小型</span>
+            <span class="visible-sm">✔ 在小型设备上可见</span>
+        </div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+           box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
+            <span class="hidden-md">中型</span>
+            <span class="visible-md">✔ 在中型设备上可见</span>
+        </div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+            box-shadow: inset 1px -1px 1px #444;inset -1px 1px 1px #444;">
+            <span class="hidden-lg">大型</span>
+            <span class="visible-lg">✔ 在大型设备上可见</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

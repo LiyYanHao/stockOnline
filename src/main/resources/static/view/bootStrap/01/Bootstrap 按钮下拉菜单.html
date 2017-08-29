@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<h2>Bootstrap 按钮下拉菜单</h2>
+<h3>本章将讲解如何使用 Bootstrap class 向按钮添加下拉菜单。如需向按钮添加下拉菜单，
+    只需要简单地在在一个 .btn-group 中放置按钮和下拉菜单即可。
+    您也可以使用 <span class="caret"></span> 来指示按钮作为下拉菜单。
+    下面的实例演示了一个基本的简单的按钮下拉菜单：</h3>
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">默认
+        <span class="caret"></span>
+        <span class="sr-only">切换下拉菜单</span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="#">功能1</a></li>
+        <li><a href="#">功能2</a></li>
+        <li><a href="#">功能3</a></li>
+        <li class="divider"></li>
+        <li><a href="#">功能4</a></li>
+    </ul>
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">原始
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href="#">功能</a>
+        </li>
+         <li>
+            <a href="#">功能1</a>
+        </li>
+         <li>
+            <a href="#">功能2</a>
+        </li>
+        <li class="divider"></li>
+         <li>
+            <a href="#">功能3</a>
+        </li>
+    </ul>
+</div>
+<div class="btn-group">
+    <button type="button" class="btn btn-success dropdown-toggle btn-xs" data-toggle="dropdown">
+        成功
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href="#">功能</a>
+        </li>
+        <li>
+            <a href="#">另一个功能</a>
+        </li>
+        <li>
+            <a href="#">其他</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">分离的链接</a>
+        </li>
+    </ul>
+</div>
+
+
+</body>
+</html>

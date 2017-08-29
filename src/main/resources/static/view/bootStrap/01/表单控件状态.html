@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!--除了 :focus 状态（即，用户点击 input 或使用 tab 键聚焦到 input 上），Bootstrap 还为禁用的输入框定义了样式，并提供了表单验证的 class。
+输入框焦点
+当输入框 input 接收到 :focus 时，输入框的轮廓会被移除，同时应用 box-shadow。
+禁用的输入框 input
+如果您想要禁用一个输入框 input，只需要简单地添加 disabled 属性，这不仅会禁用输入框，还会改变输入框的样式以及当鼠标的指针悬停在元素上时鼠标指针的样式。
+禁用的字段集 fieldset
+对 <fieldset> 添加 disabled 属性来禁用 <fieldset> 内的所有控件。
+    验证状态
+    Bootstrap 包含了错误、警告和成功消息的验证样式。只需要对父元素简单地添加适当的 class（.has-warning、 .has-error 或 .has-success）即可使用验证状态。
+    下面的实例演示了所有控件状态：-->
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">聚焦</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="focusedInput" type="text" value="该输入框获得焦点...">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="disabledInput" class="col-sm-2 control-label">禁用</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="disabledInput" type="text" placeholder="该输入框禁止输入...">
+        </div>
+    </div>
+    <fieldset disabled>
+        <div class="form-group">
+            <label for="disabledTextInput" class="col-sm-2 control-label">禁用输入（Fieldset disabled）</label>
+            <div class="col-sm-10">
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="止输入">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="disabledSelect" class="col-sm-2 control-label">禁用选择菜单（Fieldset disabled）</label>
+            <div class="col-sm-10">
+                <select id="disabledSelect" class="form-control">
+                    <option>禁止选择</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group has-success">
+        <label class="col-sm-2 control-label" for="inputSuccess">输入成功</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputSuccess">
+        </div>
+    </div>
+    <div class="form-group has-warning">
+        <label class="col-sm-2 control-label" for="inputWarning">输入警告</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputWarning">
+        </div>
+    </div>
+    <div class="form-group has-error">
+        <label class="col-sm-2 control-label" for="inputError">输入错误</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputError">
+        </div>
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

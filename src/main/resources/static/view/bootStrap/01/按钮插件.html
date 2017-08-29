@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--
+您也可以把按钮作为输入框组的前缀或者后缀元素，这个时候您就不是添加 .input-group-addon class，
+您需要使用 class .input-group-btn 来包裹按钮。这是必需的，因为默认的浏览器样式不会被重写。下面的实例演示了这点：-->
+<div style="padding:100px 100px 10px">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../weblib/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../../../weblib/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="../../../weblib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!--Bootstrap 提供了下列类型的表单布局：
+垂直表单（默认）
+内联表单
+水平表单
+垂直或基本表单
+基本的表单结构是 Bootstrap 自带的，个别的表单控件自动接收一些全局样式。下面列出了创建基本表单的步骤：
+向父 <form> 元素添加 role="form"。
+    把标签和控件放在一个带有 class .form-group 的 <div> 中。这是获取最佳间距所必需的。
+        向所有的文本元素 <input>、<textarea> 和 <select> 添加 class ="form-control" 。-->
+<form role="form">
+    <div class="form-group">
+        <label for="name">名称</label>
+        <input type="text" class="form-control" id="name" placeholder="请输入名称"/>
+    </div>
+    <div class="form-group">
+        <label for="inputFile">文件输入</label>
+        <input type="file" id="inputFile"/>
+        <p class="help-block">这里是块级帮助文本的实例。</p>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox">请打勾</label>
+        </label>
+    </div>
+    <button type="submit" class=""></button>
+</form>
+
+
+
+
+
+</body>
+</html>
