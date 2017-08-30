@@ -2,6 +2,7 @@ package com.stockonline.controller;
 
 import com.stockonline.domain.City;
 import com.stockonline.util.SendMailUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,19 +17,22 @@ import java.util.Map;
 @RestController
 public class UserController {
 
+    @Autowired
+    private SendMailUtils sendMailUtils;
+
     /**
      * 邮箱注册
      * @param email
      * @param password
      * @return
      */
-    @RequestMapping(value = "/user/Emailregister", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/sendEmailCheckCode", method = RequestMethod.POST)
     public Map<String,Object> sendEmailCheckCode(
             @RequestParam(value = "email", required = true) String email,
             @RequestParam(value = "password",required = true) String password) {
         Map<String,Object> result = new HashMap<String, Object>();
         System.out.println("email= "+email+"password="+password);
-        SendMailUtils.registerEmail(email);
+        sendMailUtils.registerEmail(email);
         result.put("status","1");
         return result;
     }

@@ -4,6 +4,7 @@ import com.EnableAnnotation.EnableScheduling;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -46,7 +47,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     //无业务功能的跳转 集中管理
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/index").setViewName("/view/index");
+        registry.addViewController("/").setViewName("forward:/index.html");
+        
         registry.addViewController("/toUpload").setViewName("/upload");
         registry.addViewController("/converter").setViewName("/converter");
         registry.addViewController("/sse").setViewName("/sse");//js的sse客户端实现服务端推送

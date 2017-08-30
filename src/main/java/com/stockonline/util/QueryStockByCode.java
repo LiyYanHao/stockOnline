@@ -1,9 +1,9 @@
 package com.stockonline.util;
 
+import com.stockonline.util.HttpUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -15,13 +15,21 @@ import java.util.Map;
  * Created by lyh on 17-6-15.
  */
 @Component
-@ConfigurationProperties(prefix = "aly")
 public class QueryStockByCode{
 
-    private  String host;
+    @Value("${spring.mail.host}")
+    private static String mailHost;
+
+    @Value("${aly.host}")
+    private String host;
+    @Value("${aly.path_sz_sh_stock_history}")
     private  String path_sz_sh_stock_history;
+    @Value("${aly.path_realtime_k}")
     private  String path_realtime_k;
+    @Value("${aly.appcode}")
     private  String appcode;
+
+
 
 
     /**
@@ -69,7 +77,7 @@ public class QueryStockByCode{
         querys.put("end", endDate);
         String body = "";
         try {
-            HttpResponse response = HttpUtils.doGet(host, path_sz_sh_stock_history, method, headers, querys);
+            HttpResponse response = HttpUtils.doGet(host,path_realtime_k, method, headers, querys);
             System.out.println(response.toString());
             //获取response的body
             body = EntityUtils.toString(response.getEntity());
@@ -82,7 +90,7 @@ public class QueryStockByCode{
 
     }
 
-    public static void way_2() throws Exception{
+/*    public static void way_2() throws Exception{
         File dest = new File("src/wangyi2.html");
         InputStream is;//接收字节输入流
         FileOutputStream fos = new FileOutputStream(dest);//字节输出流
@@ -111,40 +119,7 @@ public class QueryStockByCode{
         fos.close();
         bis.close();
         is.close();
-    }
+    }*/
 
-
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public String getPath_sz_sh_stock_history() {
-        return path_sz_sh_stock_history;
-    }
-
-    public void setPath_sz_sh_stock_history(String path_sz_sh_stock_history) {
-        this.path_sz_sh_stock_history = path_sz_sh_stock_history;
-    }
-
-    public String getPath_realtime_k() {
-        return path_realtime_k;
-    }
-
-    public void setPath_realtime_k(String path_realtime_k) {
-        this.path_realtime_k = path_realtime_k;
-    }
-
-    public String getAppcode() {
-        return appcode;
-    }
-
-    public void setAppcode(String appcode) {
-        this.appcode = appcode;
-    }
 
 }
