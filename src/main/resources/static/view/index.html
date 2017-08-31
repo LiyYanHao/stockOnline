@@ -10,8 +10,23 @@
     <link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
     <script src="https://img.hcharts.cn/highstock/highstock.js"></script>
     <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+
 </head>
 <body onload="search();">
+<div id="example" class="modal hide fade in" style="display: none; ">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>这是一个模态框标题</h3>
+    </div>
+    <div class="modal-body">
+        <h4>模态框中的文本</h4>
+        <p>你可以在这添加一些文本。</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-success">唤醒活动</a>
+        <a href="#" class="btn" data-dismiss="modal">关闭</a>
+    </div>
+</div>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-harder">
@@ -22,11 +37,14 @@
                 <div class="form-group">
                     <input type="text" id="stockCode" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" onclick="search();" class="btn btn-default">提交</button>
-                <button type="submit" onclick="search();" class="btn btn-default">大盘</button>
+                <button type="submit" onclick="searchStockCode();" class="btn btn-default">提交</button>
+                <button type="submit" onclick="searchStockCode();" class="btn btn-default">大盘</button>
+            </form>
+            <form class="navbar-form navbar-right">
+                <button type="submit" onclick="login();" class="btn btn-default">登录</button>
+                <button type="submit" onclick="search();" class="btn btn-default">注册</button>
             </form>
         </div>
-
     </div>
 </nav>
 <!--K线图-->

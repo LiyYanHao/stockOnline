@@ -20,7 +20,7 @@ public class WebInitializer implements WebApplicationInitializer {
         ctx.setServletContext(servletContext);
 
         ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
-        servlet.addMapping("/");
+        servlet.addMapping("/stock/");
         servlet.setLoadOnStartup(1);
     }
 }

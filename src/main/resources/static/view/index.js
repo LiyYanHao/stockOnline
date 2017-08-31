@@ -1,4 +1,4 @@
-function search() {
+function searchStockCode() {
     var stockCode = $("#stockCode").val();
     $.ajax({
         async: false,

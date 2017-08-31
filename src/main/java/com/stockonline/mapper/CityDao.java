@@ -1,4 +1,4 @@
-package com.stockonline.dao;
+package com.stockonline.mapper;
 
 import com.stockonline.domain.City;
 import org.apache.ibatis.annotations.*;

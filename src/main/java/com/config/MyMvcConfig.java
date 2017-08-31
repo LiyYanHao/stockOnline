@@ -26,9 +26,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new
                 InternalResourceViewResolver();
-        viewResolver.setPrefix("/");
+        viewResolver.setPrefix("classpath:/static/");
         viewResolver.setSuffix(".html");
-        viewResolver.setViewClass(JstlView.class);
         return viewResolver;
     }
 
@@ -38,7 +37,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry){
         //addResourceHandler 暴露的路径  addResourceLocations放置文件的路径
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
     }
 
 
@@ -47,7 +46,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     //无业务功能的跳转 集中管理
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/index.html");
+        registry.addViewController("/index").setViewName("/index");
         
         registry.addViewController("/toUpload").setViewName("/upload");
         registry.addViewController("/converter").setViewName("/converter");
@@ -55,13 +54,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
         registry.addViewController("/async").setViewName("/async");//服务端定时任务推送
     }
 
-    @Bean//文件
-    public MultipartResolver multipartResolver(){
-        CommonsMultipartResolver multipartResolver =
-                new CommonsMultipartResolver();
-        multipartResolver.setMaxInMemorySize(10000);
-        return multipartResolver;
-    }
+
 
     @Override//不忽略点
     public void configurePathMatch(PathMatchConfigurer configurer) {
