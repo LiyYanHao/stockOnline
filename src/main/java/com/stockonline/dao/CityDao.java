@@ -3,6 +3,8 @@ package com.stockonline.dao;
 import com.stockonline.domain.City;
 import org.apache.ibatis.annotations.*;
 
+import java.util.Map;
+
 /**
  * 城市 DAO 接口类
  *
@@ -24,5 +26,5 @@ public interface CityDao {
             @Result(property = "cityName", column = "city_name"),
             @Result(property = "description", column = "description"),
     })
-    City findByName(@Param("cityName") String cityName);
+    Map findByName(@Param("cityName") String cityName);
 }

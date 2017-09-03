@@ -6,6 +6,8 @@ import com.stockonline.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * 城市业务逻辑实现类
  *
@@ -17,7 +19,7 @@ public class CityServiceImpl implements CityService {
     @Autowired
     private CityDao cityDao;
 
-    public City findCityByName(String cityName) {
+    public Map findCityByName(String cityName) {
         return cityDao.findByName(cityName);
     }
 
