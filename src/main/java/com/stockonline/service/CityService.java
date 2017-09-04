@@ -1,23 +1,20 @@
 package com.stockonline.service;
 
+
 import com.stockonline.domain.City;
-import com.stockonline.mapper.CityDao;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
- * 城市业务逻辑实现类
+ * 城市业务逻辑接口类
  *
  * Created by xchunzhao on 02/05/2017.
  */
-@Service
-public class CityService{
+public interface CityService {
 
-    @Autowired
-    private CityDao cityDao;
-
-    public City findCityByName(String cityName) {
-        return cityDao.findByName(cityName);
-    }
-
+    /**
+     * 根据城市名称，查询城市信息
+     * @param cityName
+     */
+    Map findCityByName(String cityName);
 }
