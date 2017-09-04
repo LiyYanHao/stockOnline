@@ -63,58 +63,7 @@
     });
     }
 </script>
-<!--帐号校验-->
-<script>
-    $(function () {
-        $('form').bootstrapValidator({
-            message: 'This value is not valid',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                password: {
-                    message: '密码验证失败',
-                    validators: {
-                        notEmpty: {
-                            message: '登录密码不能为空'
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 18,
-                            message: '登录密码长度必须在6到18位之间'
-                        },
 
-                        regexp: {
-                            regexp: /^[a-zA-Z0-9_]+$/,
-                            message: '登录密码只能包含大写、小写、数字和下划线'
-                        }
-                    }
-                },
-                rePassword: {
-                    message: '密码验证失败',
-                    validators: {
-                        identical: {//相同
-                            field: 'password', //需要进行比较的input name值
-                            message: '两次密码不一致'
-                        }
-                    }
-                },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: '邮箱不能为空'
-                        },
-                        emailAddress: {
-                            message: '邮箱地址格式有误'
-                        }
-                    }
-                }
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
