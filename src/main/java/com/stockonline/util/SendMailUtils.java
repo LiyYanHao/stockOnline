@@ -53,6 +53,10 @@ public class SendMailUtils {
     private String defaultEncoding;
     @Value("${spring.mail.protocol}")
     private String mailProtocol;
+    @Value("${defaultDESKey}")
+    private String strDefaultKey;
+    @Value("${app_host}")
+    private String appHost;
     /**
      * 这个方法在实际应用中，springboot会通过在配置文件application.xml
      * 中加配置自动实例化JavaMailSenderImpl，本方法只是为了测试使用
@@ -65,7 +69,7 @@ public class SendMailUtils {
         properties.setProperty("mail.smtp.socketFactory.class",
                 "javax.net.ssl.SSLSocketFactory");
         properties.setProperty("mail.smtp.auth", "true");
-        properties.put(" mail.smtp.timeout ", " 25000 ");
+        properties.put(" mail.smtp.timeout ", " 25000");
 
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
 
@@ -85,12 +89,13 @@ public class SendMailUtils {
         JavaMailSenderImpl sender = initJavaMailSender();
         String[] ss = {userEmail};
         String activeCode = StringRandom.getStringRandom(6);
-        String activeCodeEncrypt = EncryptUtilDES.encrypt(activeCode);
+        String activeCodeEncrypt = EncryptUtilDES.encrypt(strDefaultKey,activeCode);//指定
+        //TODO 从缓存中取出加密的激活码进行比较
         sendTextWithHtml(sender,ss,"股票在线用户激活","" +
-                "<span>你的激活码是：</span><br>\n" +
+                "<span>你的激活码是："+activeCode+"</span><br>\n" +
                 "    <h2></h2><br>\n" +
                 "    <span>你也可以点击连接完成激活:</span> <br>\n" +
-                "    <a href=\"http://localhost:8080/user/emailActive?activeCode=123\">点击激活用户</a>");
+                "    <a href=\""+appHost+"/stock/user/emailActive?activeCode=123\">点击激活用户</a>");
     }
 
     public void sendTextWithHtml(JavaMailSenderImpl sender, String[] tos, String subject, String text)

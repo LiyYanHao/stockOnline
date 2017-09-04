@@ -84,6 +84,25 @@ function search() {
         });
     });
 }
+function submitRegisterInfo(){
+    //
+    $('#regForm').data('bootstrapValidator').validate();//开启校验
+    var flag = $("#regForm").data("bootstrapValidator").isValid();//校验状态
+    if(!flag){
+    return;
+    }
+    debugger;
+
+        var email = $("#email").val();
+        var password = $("#password").val();
+        console.log(email+","+password);
+        $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result){
+            if(result.status){
+                $('#myReginModal').modal('hide');
+                alert("注册成功")
+            }
+        });
+}
 <!--帐号校验-->
 $(function () {
     $('form').bootstrapValidator({
@@ -112,7 +131,7 @@ $(function () {
                     }
                 }
             },
-            rePassword: {
+            confirmPassword: {
                 message: '密码验证失败',
                 validators: {
                     identical: {//相同

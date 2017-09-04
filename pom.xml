@@ -113,6 +113,25 @@
 
 
 	<build>
+
+		<finalName>stockOnline</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>static/weblib/bootstrap/fonts**</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -136,7 +155,7 @@
 				<configuration>
 					<webResources>
 						<resource>
-							<directory>src/main/webapp</directory>
+							<directory>src/main/resources/static</directory>
 							<filtering>false</filtering>
 						</resource>
 					</webResources>

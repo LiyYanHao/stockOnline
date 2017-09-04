@@ -1,7 +1,7 @@
 package com.stockonline.service.impl;
 
-import com.stockonline.dao.CityDao;
 import com.stockonline.domain.City;
+import com.stockonline.mapper.CityDao;
 import com.stockonline.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
