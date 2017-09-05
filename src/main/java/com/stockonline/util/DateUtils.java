@@ -26,4 +26,14 @@ public class DateUtils {
             return s;
         }
     }
+
+    /**
+     * 获取当前时间
+     * yyyyMMddHHmiss
+     * @return
+     */
+    public static String getNowDateTime(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmiss");
+        return simpleDateFormat.format(new Date());
+    }
 }
