@@ -27,8 +27,7 @@ public class UserService {
      * @param email
      * @return
      */
-    public Map<String,String> getUserInfo(String email){
-
-        return null;
+    public Map<String,String> getUserInfo(String getUserInfo){
+        return userDao.getUserInfo(getUserInfo);
     }
 }
