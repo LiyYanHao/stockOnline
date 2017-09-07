@@ -7,5 +7,7 @@ public class BusinessConstant {
     public static String AJAX_STATUS="status";
     public static char AJAX_STATUS_SUCCESS='1';
     public static char AJAX_STATUS_ERROR='0';
+    public static String AJAX_RESULT_MSG = "MSG";
+    public static String USER_NAME = "username";
 
 }

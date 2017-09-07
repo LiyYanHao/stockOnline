@@ -33,7 +33,8 @@ public class DateUtils {
      * @return
      */
     public static String getNowDateTime(){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmiss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         return simpleDateFormat.format(new Date());
     }
+
 }

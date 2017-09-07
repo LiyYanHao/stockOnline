@@ -18,7 +18,13 @@ function searchStockCode() {
 function showRegin() {
     $('#myReginModal').modal('show');
 }
+function showLogin() {
+    $('#repassword').hide();
+    $('#myReginModal').modal('show');
+}
+function queryUserInfo() {
 
+}
 function search() {
     $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
         var startDate = new Date(data[data.length - 1][0]), // Get year of last data point
@@ -84,6 +90,27 @@ function search() {
         });
     });
 }
+
+/**
+ * 登录
+ */
+function submitLogin(){
+    $('#myReginModal2').data('bootstrapValidator').validate();//开启校验
+    var flag = $("#myReginModal2").data("bootstrapValidator").isValid();//校验状态
+    if(!flag){
+        return;
+    }
+
+    var email = $("LoginEmail").val();
+    var password = $("#passwordLogin").val();
+    console.log(email+","+password);
+    $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result){
+        if(result.status && result.status == 1){
+
+        }
+/**
+ * 注册
+ */
 function submitRegisterInfo(){
     //
     $('#regForm').data('bootstrapValidator').validate();//开启校验
@@ -91,17 +118,25 @@ function submitRegisterInfo(){
     if(!flag){
     return;
     }
-    debugger;
 
-        var email = $("#email").val();
-        var password = $("#password").val();
-        console.log(email+","+password);
-        $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result){
-            if(result.status){
-                $('#myReginModal').modal('hide');
-                alert("注册成功")
-            }
-        });
+    var email = $("#email").val();
+    var password = $("#password").val();
+    console.log(email+","+password);
+    $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result){
+        if(result.status && result.status == 1){
+            $('#myReginModal').modal('hide');
+                    //替换按钮为用户名
+            $("#showReginId").hide();
+            $("#userInfo").html("用户已经登录："+result.username);
+
+                }else{
+                    var errorMsg = "服务端错误";
+                    errorMsg = result.MSG;
+                    $("#errorMsg").html(errorMsg).show();
+
+
+                }
+    });
 }
 <!--帐号校验-->
 $(function () {

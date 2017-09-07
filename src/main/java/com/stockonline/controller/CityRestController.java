@@ -24,8 +24,6 @@ public class CityRestController {
     @Autowired
     private QueryStockByCode queryStockByCode;
 
-    @Autowired
-    private CityService cityService;
 
     @RequestMapping(value = "/stock/getRealtimeKBystockCode", method = RequestMethod.GET)
     public String getRealtimeKBystockCode(@RequestParam(value = "stockCode", required = true) String stockCode) {
@@ -34,12 +32,6 @@ public class CityRestController {
         JSONObject BodyJsonObject = JSONObject.parseObject(body);
         Object BodyJsonObject2 = BodyJsonObject.get("showapi_res_body");
         return body;
-    }
-
-    @RequestMapping(value = "/stock/getCityByName", method = RequestMethod.GET)
-    public Map getCityByName(){
-        Map map = cityService.findCityByName("北京");
-        return map;
     }
 
 
