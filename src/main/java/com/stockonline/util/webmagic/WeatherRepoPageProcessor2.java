@@ -65,6 +65,6 @@ public class WeatherRepoPageProcessor2 implements PageProcessor {
 
     public static void main(String[] args) {
         //添加种子url，并打开5个线程开始爬虫
-        Spider.create(new WeatherRepoPageProcessor2()).addUrl("http://lishi.tianqi.com").thread(5).run();
+        Spider.create(new WeatherRepoPageProcessor2()).addUrl("http://stock.eastmoney.com/").thread(5).run();
     }
 }

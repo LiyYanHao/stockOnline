@@ -65,6 +65,8 @@ public class UserController {
         result.put(BusinessConstant.AJAX_STATUS,BusinessConstant.AJAX_STATUS_SUCCESS);
         return result;
     }
+
+
     /**
      *
      * @param activeCode
@@ -112,6 +114,13 @@ public class UserController {
         }
         //登录校验
         boolean b = userService.checkUserLogin(userInfo);
+        if(!b){
+            result.put(BusinessConstant.AJAX_STATUS,BusinessConstant.AJAX_STATUS_ERROR);
+            result.put(BusinessConstant.AJAX_RESULT_MSG,"用户密码错误");
+            return result;
+        }
+        result.put(BusinessConstant.AJAX_STATUS,BusinessConstant.AJAX_STATUS_SUCCESS);
+        result.put(BusinessConstant.USER_NAME,user.get("username"));
         return null;
 
     }

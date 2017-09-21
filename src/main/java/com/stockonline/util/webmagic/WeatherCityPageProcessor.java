@@ -47,7 +47,7 @@ public class WeatherCityPageProcessor implements PageProcessor{
     }
 
     public static void main(String[] args){
-        Spider.create(new WeatherCityPageProcessor()).addUrl("http://www.weather.com.cn/province/").thread(1).run();
+        Spider.create(new WeatherCityPageProcessor()).addUrl("https://pan.baidu.com/s/1skOu2LJ").thread(1).run();
         for (Map<String,String> map:provinceList ){
             Set<String> entries = map.keySet();
             Iterator<String> iterator = entries.iterator();
