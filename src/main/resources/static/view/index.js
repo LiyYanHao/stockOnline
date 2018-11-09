@@ -104,10 +104,12 @@ function submitLogin(){
     var email = $("LoginEmail").val();
     var password = $("#passwordLogin").val();
     console.log(email+","+password);
-    $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result){
-        if(result.status && result.status == 1){
+    $.post("http://localhost:8080/stock/user/sendEmailCheckCode",{email:email,password:password},function(result) {
+        if (result.status && result.status == 1) {
 
         }
+    })
+}
 /**
  * 注册
  */
