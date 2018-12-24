@@ -3,7 +3,7 @@ package com.stockonline.domain;
 /**
  * 城市实体类
  *
- * Created by xchunzhao on 02/05/2017.
+ * Created by liyanhao on 02/05/2017.
  */
 public class City {
 

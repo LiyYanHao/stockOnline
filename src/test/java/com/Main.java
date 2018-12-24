@@ -1,15 +1,33 @@
 package com;
 
+import java.util.*;
+
 /**
  * Created by lyh on 17-5-25.
  */
 public class Main {
     public static void main(String[] args){
-        ClassLoader appClassLoader = ClassLoader.getSystemClassLoader();
-        System.out.println("系统类装载器:"+appClassLoader);
-        ClassLoader extensionClassLoader = appClassLoader.getParent();
-        System.out.println("系统类装载器的父类加载器——扩展类加载器:"+extensionClassLoader);
-        ClassLoader bootStrapClassLoader = extensionClassLoader.getParent();
-        System.out.println("扩展类加载器的父类加载器——引导类加载器:"+bootStrapClassLoader);
+        Map<String,Object> map =  new HashMap<>();
+        map.put("1","a");
+        map.put("2","b");
+        map.put("3","c");
+        map.put("4","d");
+        map.put("5","e");
+        processMap(map,"3");
+        System.out.println(map);
+
+
+    }
+
+
+    public static void processMap(Map map,String key) {
+        Iterator<String> iter = map.keySet().iterator();
+        while(iter.hasNext()) {
+            String keyTmp = iter.next();
+            if (keyTmp.equals(key)) {
+                iter.remove();
+            }
+
+        }
     }
 }
