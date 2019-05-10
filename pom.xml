@@ -48,7 +48,29 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>${mybatis-spring-boot}</version>
 		</dependency>
-
+		<!--spring security-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!--PDF-->
+		<dependency>
+			<groupId> e-iceblue </groupId>
+			<artifactId>spire.pdf</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<!--bouncycastle加密和解密支持-->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.56</version>
+		</dependency>
+		<!--  commons-codec 加解密工具类-->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
 
 
 		<!-- MySQL 连接驱动依赖 -->
@@ -194,7 +216,13 @@
 
 	</dependencies>
 
-
+	<repositories>
+		<repository>
+			<id>com.e-iceblue</id>
+			<name>e-iceblue</name>
+			<url>http://repo.e-iceblue.com/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
 
 	<build>
 

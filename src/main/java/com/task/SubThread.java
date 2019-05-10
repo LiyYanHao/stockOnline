@@ -27,12 +27,14 @@ public class SubThread extends Thread {
         try {
             System.out.println("JedisCluster========="+jedisCluster);
             jedisCluster.subscribe(subscriber, channel);
+            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         } catch (Exception e) {
+
             System.out.println(String.format("subsrcibe channel error, %s", e));
         } finally {
-            if (jedis != null) {
-                jedis.close();
-            }
+//            if (jedis != null) {
+//                jedis.close();
+//            }
         }
     }
 }

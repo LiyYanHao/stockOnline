@@ -11,6 +11,10 @@ import java.util.Arrays;
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		//SpringApplication.run(Application.class, args);
+		Object ll =null;
+		String ss = (String)ll;
+
+
 	}
-}
+	}
