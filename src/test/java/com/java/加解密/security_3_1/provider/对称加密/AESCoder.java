@@ -14,7 +14,7 @@ public class AESCoder {
 
     public static final String KEY_ALGORITHM = "AES";
 
-    public static final String CIPHER_ALGORITHM="AES/ECB/PKCS7Padding";
+    public static final String CIPHER_ALGORITHM="AES/ECB/PKCS8Padding";
 
     public static Key toKey(byte[] key)throws Exception{
         SecretKey secretKey = new SecretKeySpec(key, KEY_ALGORITHM);
@@ -58,15 +58,6 @@ public class AESCoder {
         SecretKey secretKey = keyGenerator.generateKey();
         return secretKey.getEncoded();
     }
-
-
-
-
-
-
-
-
-
 
 
 
