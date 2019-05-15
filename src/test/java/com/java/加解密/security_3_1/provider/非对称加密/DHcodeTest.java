@@ -61,9 +61,6 @@ public class DHcodeTest {
         System.out.println("==使用乙方本地秘钥对数据解密==");
         byte[] decrypt = DHcode.decrypt(encrypt, key2);
         System.out.println("解密：\t"+new String(decrypt));
-
-
-
     }
 
 
