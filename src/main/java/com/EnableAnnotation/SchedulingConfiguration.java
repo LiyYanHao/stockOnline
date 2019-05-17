@@ -10,14 +10,13 @@ import org.springframework.scheduling.config.TaskManagementConfigUtils;
 /**
  * Created by lyh on 17-5-19.
  */
-@Configuration
-@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
+/*@Configuration
+@Role(BeanDefinition.ROLE_INFRASTRUCTURE)*/
 public class SchedulingConfiguration {
-
-    @Bean(name =
-            TaskManagementConfigUtils.SCHEDULED_ANNOTATION_PROCESSOR_BEAN_NAME)
-    @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
-    public ScheduledAnnotationBeanPostProcessor scheduledAnnotationBeanPostProcessor(){
-        return new ScheduledAnnotationBeanPostProcessor();
-    }
+//
+//    @Bean(name =TaskManagementConfigUtils.SCHEDULED_ANNOTATION_PROCESSOR_BEAN_NAME)
+//    @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
+//    public ScheduledAnnotationBeanPostProcessor scheduledAnnotationBeanPostProcessor(){
+//        return new ScheduledAnnotationBeanPostProcessor();
+//    }
 }

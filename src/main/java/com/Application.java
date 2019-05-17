@@ -10,11 +10,11 @@ import java.util.Arrays;
 @EnableConfigurationProperties
 public class Application {
 
-	public static void main(String[] args) {
-		//SpringApplication.run(Application.class, args);
-		Object ll =null;
-		String ss = (String)ll;
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+        Object ll = null;
+        String ss = (String) ll;
 
 
-	}
-	}
+    }
+}
