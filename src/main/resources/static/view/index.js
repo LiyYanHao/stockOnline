@@ -1,4 +1,4 @@
-function searchStockCode() {
+/*function searchStockCode() {
     var stockCode = $("#stockCode").val();
     $.ajax({
         async: false,
@@ -14,7 +14,7 @@ function searchStockCode() {
             console.log(msg);
         }
     });
-}
+}*/
 function showRegin() {
     $('#myReginModal').modal('show');
 }

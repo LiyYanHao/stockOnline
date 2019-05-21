@@ -32,9 +32,9 @@ public class SubThread extends Thread {
 
             System.out.println(String.format("subsrcibe channel error, %s", e));
         } finally {
-//            if (jedis != null) {
-//                jedis.close();
-//            }
+           if (jedis != null) {
+               jedis.close();
+           }
         }
     }
 }
