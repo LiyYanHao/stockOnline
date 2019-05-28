@@ -10,7 +10,7 @@ import java.util.TimeZone;
 public class DateUtils {
 
     /**
-     *  date格式的时间转UTC格式的时间字符串
+     *  date锟斤拷式锟斤拷时锟斤拷转UTC锟斤拷式锟斤拷时锟斤拷锟街凤拷锟斤拷
      * @param date
      */
     public static String DateConvertUTCString(Date date){
@@ -28,7 +28,7 @@ public class DateUtils {
     }
 
     /**
-     * 获取当前时间
+     * 锟斤拷取锟斤拷前时锟斤拷
      * yyyyMMddHHmiss
      * @return
      */

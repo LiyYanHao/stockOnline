@@ -19,18 +19,18 @@ public class DSACodeTest {
         Map<String, Object> initkey = DSACode.initkey();
         privateKey = DSACode.getPrivate(initkey);
         publicKey = DSACode.getPublic(initkey);
-        System.out.println("¹«Ô¿: \t"+Base64.encodeBase64String(privateKey));
-        System.out.println("¹«Ô¿: \t"+Base64.encodeBase64String(publicKey));
+        System.out.println("ï¿½ï¿½Ô¿: \t"+Base64.encodeBase64String(privateKey));
+        System.out.println("ï¿½ï¿½Ô¿: \t"+Base64.encodeBase64String(publicKey));
     }
     @Test
     public void DSACodeSample()throws Exception{
-        String input = "DSAÊý×ÖÇ©Ãû";
-        System.out.println("Ô­ÎÄ:\t"+input);
+        String input = "DSAï¿½ï¿½ï¿½ï¿½Ç©ï¿½ï¿½";
+        System.out.println("Ô­ï¿½ï¿½:\t"+input);
         byte[] bytes = input.getBytes();
         byte[] sign = DSACode.sign(bytes, privateKey);
-        System.out.println("Ç©Ãû:\t"+ Base64.encodeBase64String(sign));
+        System.out.println("Ç©ï¿½ï¿½:\t"+ Base64.encodeBase64String(sign));
         boolean verify = DSACode.verify(bytes, publicKey,sign);
-        System.out.println("ÑéÖ¤: \t"+verify);
+        System.out.println("ï¿½ï¿½Ö¤: \t"+verify);
     }
 
 
