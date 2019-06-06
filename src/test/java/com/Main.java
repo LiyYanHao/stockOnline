@@ -9,18 +9,35 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("1", "a");
-        map.put("2", "b");
-        map.put("3", "c");
-        map.put("4", "d");
-        map.put("5", "e");
-        processMap(map, "3");
-        System.out.println(map);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("1", "a");
+//        map.put("2", "b");
+//        map.put("3", "c");
+//        map.put("4", "d");
+//        map.put("5", "e");
+//        processMap(map, "3");
+//        System.out.println(map);
+
+
+            System.out.println(txt());
+
+
 
 
     }
 
+    static int txt(){
+                     int a=1;
+                     try {
+
+                                a++;
+                                 return a;
+
+                           }finally{
+                            System.out.println("adasdasdasd");
+
+                          }
+                }
 
     public static void processMap(Map map, String key) {
         Iterator<String> iter = map.keySet().iterator();
