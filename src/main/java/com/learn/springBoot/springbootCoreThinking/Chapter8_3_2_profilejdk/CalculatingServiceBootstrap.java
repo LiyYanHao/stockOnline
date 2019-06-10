@@ -45,16 +45,3 @@ public class CalculatingServiceBootstrap {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
