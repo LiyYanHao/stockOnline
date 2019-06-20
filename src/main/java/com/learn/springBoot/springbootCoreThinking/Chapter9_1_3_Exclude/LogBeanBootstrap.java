@@ -14,7 +14,6 @@ import java.util.stream.Stream;
  * Description: No Description
  */
 @ComponentScan(basePackageClasses = LogBeanBootstrap.class)
-
 public class LogBeanBootstrap {
     public static void main(String[] args) {
         // 注册当前引导类作为配置 Class，并启动当前上下文

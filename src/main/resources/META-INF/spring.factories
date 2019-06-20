@@ -3,3 +3,7 @@ org.springframework.boot.SpringApplicationRunListener=\
 
 org.springframework.context.ApplicationContextInitializer=\
   com.learn.springBoot.Implements.DemoApplicationContextInitializer
+
+# org.springframework.boot.autoconfigure.AutoConfigurationImportListener ≈‰÷√
+org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
+com.learn.springBoot.springbootCoreThinking.Chapter9_2_4_ImportListener.DefaultAutoConfigurationImportListener

@@ -1,0 +1,5 @@
+package com.DesignPattern.headfirst.designpatterns.combining.ducks;
+
+public interface Quackable {
+	public void quack();
+}

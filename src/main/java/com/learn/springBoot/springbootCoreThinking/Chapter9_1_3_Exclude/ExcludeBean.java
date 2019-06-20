@@ -11,6 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * Description: No Description
  */
 @Configuration
-//@EnableAutoConfiguration(exclude = {ExcludeBean.class})
+//@EnableAutoConfiguration(excludeName = {"excludeBean"})
 public class ExcludeBean {
 }
