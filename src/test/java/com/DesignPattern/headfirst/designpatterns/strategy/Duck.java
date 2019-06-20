@@ -1,11 +1,12 @@
 package com.DesignPattern.headfirst.designpatterns.strategy;
 
+import com.DesignPattern.HardFirstDesignMode.StrategyPattern.BaseOnInterface.QuackBehavior;
+import com.DesignPattern.headfirst.designpatterns.strategy.FlyBehavior;
+
 public abstract class Duck {
 	FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
 
-	public Duck() {
-	}
 
 	public void setFlyBehavior(FlyBehavior fb) {
 		flyBehavior = fb;
@@ -29,3 +30,4 @@ public abstract class Duck {
 		System.out.println("All ducks float, even decoys!");
 	}
 }
+
