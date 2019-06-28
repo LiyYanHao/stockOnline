@@ -1,8 +1,13 @@
 package com;
 
+import org.apache.spark.sql.sources.In;
 import org.junit.Test;
+import sun.awt.SunHints;
 
+import java.math.BigDecimal;
 import java.util.*;
+
+import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
 
 /**
  * Created by lyh on 17-5-25.
@@ -17,27 +22,47 @@ public class Main {
 //        map.put("5", "e");
 //        processMap(map, "3");
 //        System.out.println(map);
+//            int i=0;
+//            ++i;
+//            System.out.println(i);
 
 
-            System.out.println(txt());
-
-
-
-
+        int reverse = reverse(1231);
+        System.out.println(reverse);
     }
 
-    static int txt(){
-                     int a=1;
-                     try {
+    public static int reverse(int x) {
+        int res = 0;
+        while (x != 0) {//实现反转
+            int pop = x % 10;
+            x = x / 10;
+            //判断是否越界
+            if (res > Integer.MAX_VALUE / 10 ||
+                    (res == Integer.MAX_VALUE / 10 && pop > Integer.MAX_VALUE % 10)) {
+                return 0;
+            } else if (res < Integer.MIN_VALUE / 10
+                    || (res == Integer.MIN_VALUE / 10 && pop < Integer.MIN_VALUE % 10)) {
+                return 0;
+            }
+            res = res * 10 + pop;
+        }
 
-                                a++;
-                                 return a;
+        return res;
+    }
 
-                           }finally{
-                            System.out.println("adasdasdasd");
 
-                          }
-                }
+    static int txt() {
+        int a = 1;
+        try {
+
+            a++;
+            return a;
+
+        } finally {
+            System.out.println("adasdasdasd");
+
+        }
+    }
 
     public static void processMap(Map map, String key) {
         Iterator<String> iter = map.keySet().iterator();
@@ -49,8 +74,9 @@ public class Main {
 
         }
     }
+
     @Test
-    public void testRemoveIntInList(){
+    public void testRemoveIntInList() {
         ArrayList<Integer> ints = new ArrayList<>();
         ints.add(1);
         ints.add(2);

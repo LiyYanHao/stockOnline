@@ -1,6 +1,5 @@
 package com.DesignPattern.headfirst.designpatterns.strategy;
 
-import com.DesignPattern.HardFirstDesignMode.StrategyPattern.BaseOnInterface.QuackBehavior;
 import com.DesignPattern.headfirst.designpatterns.strategy.FlyBehavior;
 
 public abstract class Duck {
