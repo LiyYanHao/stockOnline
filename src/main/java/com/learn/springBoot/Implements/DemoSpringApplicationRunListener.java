@@ -40,17 +40,7 @@ public class DemoSpringApplicationRunListener implements SpringApplicationRunLis
     }
 
     @Override
-    public void started(ConfigurableApplicationContext context) {
-
-    }
-
-    @Override
-    public void running(ConfigurableApplicationContext context) {
-
-    }
-
-    @Override
-    public void failed(ConfigurableApplicationContext context, Throwable exception) {
+    public void finished(ConfigurableApplicationContext context, Throwable exception) {
 
     }
 
