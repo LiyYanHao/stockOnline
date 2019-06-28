@@ -10,6 +10,20 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @author lyh on 2019/5/21
  */
 public class DemoSpringApplicationRunListener implements SpringApplicationRunListener {
+    @Override
+    public void started(ConfigurableApplicationContext context) {
+
+    }
+
+    @Override
+    public void running(ConfigurableApplicationContext context) {
+
+    }
+
+    @Override
+    public void failed(ConfigurableApplicationContext context, Throwable exception) {
+
+    }
 
     /**
      * 重写构造方法
@@ -39,7 +53,6 @@ public class DemoSpringApplicationRunListener implements SpringApplicationRunLis
         System.out.println("contextLoaded");
     }
 
-    @Override
     public void finished(ConfigurableApplicationContext context, Throwable exception) {
 
     }
