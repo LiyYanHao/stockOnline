@@ -10,6 +10,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @author lyh on 2019/5/21
  */
 public class DemoSpringApplicationRunListener implements SpringApplicationRunListener {
+
     @Override
     public void started(ConfigurableApplicationContext context) {
 
