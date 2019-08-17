@@ -21,7 +21,7 @@ import java.util.List;
 @EnableWebMvc//开启springmvc支持，若无次句，重写WebMvcConfigurerAdapter方法无效
 @EnableScheduling//开启计划任务支持
 @ComponentScan("com.stockonline.controller")
-public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对springmvc配置
+public class MyMvcConfig implements WebMvcConfigurer {//重写方法对springmvc配置
     @Bean
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new
@@ -46,6 +46,10 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     //无业务功能的跳转 集中管理
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        //设置默认登录页面
+        registry.addViewController( "/" ).setViewName( "forward:/index.html" );
+        registry.setOrder( Ordered.HIGHEST_PRECEDENCE );
+
         registry.addViewController("/index").setViewName("/index");
         
         registry.addViewController("/toUpload").setViewName("/upload");
@@ -60,4 +64,24 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//重写方法对sprin
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.setUseSuffixPatternMatch(false);
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
